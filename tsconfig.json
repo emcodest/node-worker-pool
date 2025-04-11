@@ -8,5 +8,5 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "demo.ts"]
+  "include": ["src/**/*.ts", "dist/demo.js"]
 }

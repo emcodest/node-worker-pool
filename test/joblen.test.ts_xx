@@ -1,0 +1,12 @@
+import { WorkerPool } from "../src/index";
+import path from "path";
+
+test("WorkerPool processes multiple jobs ##2", async () => {
+  const pool = new WorkerPool(path.join(__dirname, "../work.js"), 4);
+
+  const results = await Promise.all(
+    Array.from({ length: 10 }).map((_, i) => pool.send({ job: i }))
+  );
+  expect(results.length).toBe(10);
+  pool.shutdown();
+});

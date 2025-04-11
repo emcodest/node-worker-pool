@@ -25,7 +25,7 @@ npm install @emcode/worker-pool
 ```ts
 import { WorkerPool } from "@emcode/worker-pool";
 
-const pool = new WorkerPool("./worker.js", 4, {
+const pool = new WorkerPool("./index.js", 4, {
   timeout: 3000,
   retries: 2
 });
