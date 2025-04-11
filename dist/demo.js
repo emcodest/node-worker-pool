@@ -1,7 +1,9 @@
 const path = require("path");
 const { WorkerPool } = require("./index");
-console.log('\x1b[41m%s\x1b[0m', 'xxx', WorkerPool)
-const pool = new WorkerPool(path.join(__dirname, "worker.js"), 8, {}); // 8 threads
+const pool = new WorkerPool(path.join(__dirname, "worker.js"), 8, {
+  timeout: 5000,
+  retries: 3
+}); // 8 threads
 
 async function run() {
   const tasks = [];

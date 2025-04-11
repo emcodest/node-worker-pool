@@ -2,7 +2,7 @@
 
 > Ultra-fast, typed in-memory worker thread pool for Node.js with retries, timeouts, auto-respawn, and queueing.
 
----
+___
 
 ## 🚀 Installation
 
