@@ -11,7 +11,11 @@ export class WorkerPool {
   private poolSize: number;
   private options: Required<WorkerPoolOptions>;
 
-  constructor(workerPath: string, poolSize: number = 4, options: WorkerPoolOptions = {}) {
+  constructor(
+    workerPath: string,
+    poolSize: number = 4,
+    options: WorkerPoolOptions = {}
+  ) {
     this.workerPath = workerPath;
     this.poolSize = poolSize;
     this.options = {
@@ -54,7 +58,7 @@ export class WorkerPool {
 
   private getIdleWorker(): Worker | null {
     for (const w of this.workers) {
-      if (![...this.activeJobs.values()].some(j => j.worker === w)) return w;
+      if (![...this.activeJobs.values()].some((j) => j.worker === w)) return w;
     }
     return null;
   }
